@@ -28,7 +28,7 @@ st.set_page_config(
     page_title="ReviewLyser : Smart Review Aspect Analyser", 
     page_icon="🎯", 
     layout="wide",  # Changed to wide for better layout
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Custom CSS for better UI
