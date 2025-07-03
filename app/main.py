@@ -25,8 +25,8 @@ def ensure_secrets():
 ensure_secrets()
 # Configure Streamlit with better defaults
 st.set_page_config(
-    page_title="Product Review Analyzer & Amazon Scraper", 
-    page_icon="🛒", 
+    page_title="ReviewLyser : Smart Review Aspect Analyser", 
+    page_icon="🎯", 
     layout="wide",  # Changed to wide for better layout
     initial_sidebar_state="expanded"
 )
@@ -90,8 +90,8 @@ st.markdown("""
 # Header
 st.markdown("""
 <div class="main-header">
-    <h1>🛒 Product Review Analyzer & Amazon Scraper</h1>
-    <p>AI-Powered Sentiment Analysis | Real Amazon Reviews | Business Insights</p>
+    <h1>🎯 ReviewLyser </h1>
+    <p>AI-Powered Review Analysis & Amazon Intelligence Platform</p>
 </div>
 """, unsafe_allow_html=True)
 
