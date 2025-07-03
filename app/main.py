@@ -164,7 +164,7 @@ if 'all_results' not in st.session_state:
     st.session_state.all_results = []
 
 # Main content with tabs for better organization
-tab1, tab2, tab3 = st.tabs(["Single Review Analysis", "Amazon Bulk Scraper", "Results & Insights"])
+tab1, tab2, tab3 = st.tabs(["Single Review Analysis", "Amazon Product Review Analyzer", "Results & Insights"])
 
 with tab1:
     st.subheader("Analyze Individual Product Reviews")
