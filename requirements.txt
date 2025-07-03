@@ -1,9 +1,9 @@
 # Create/update requirements.txt
-echo 'streamlit>=1.28.0
+streamlit>=1.28.0
 pandas>=2.0.3
 requests>=2.31.0
 beautifulsoup4>=4.12.2
 python-dotenv>=1.0.0
 textblob>=0.17.1
 vaderSentiment>=3.3.2
-numpy>=1.24.3' > requirements.txt
+numpy>=1.24.3

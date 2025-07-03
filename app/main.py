@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 from dotenv import load_dotenv
-
+import os
 # Load environment variables
 load_dotenv()
 
@@ -12,6 +12,17 @@ from aspect_extractor import extract_aspects, get_aspect_categories, analyze_asp
 from amazon_scraper import get_reviews_from_amazon, test_scraperapi_key, get_sample_reviews
 from utils import colored_chip, format_time, display_ml_metrics, create_ml_export_data
 
+
+def ensure_secrets():
+    try:
+        # Test if secrets are accessible
+        test_key = st.secrets.get("SCRAPERAPI_KEY", "")
+        if test_key:
+            os.environ['SCRAPERAPI_KEY'] = test_key
+    except:
+        pass
+
+ensure_secrets()
 # Configure Streamlit with better defaults
 st.set_page_config(
     page_title="Product Review Analyzer & Amazon Scraper", 
