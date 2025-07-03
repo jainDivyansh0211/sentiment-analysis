@@ -1,0 +1,19 @@
+# Core packages
+streamlit
+pandas
+requests
+beautifulsoup4
+python-dotenv
+
+# ML packages for sentiment analysis (showcase ML skills)
+textblob
+vaderSentiment
+
+# Optional: Advanced ML (comment out if causing issues)
+# transformers
+# torch
+
+# Note: 
+# - textblob: Uses Naive Bayes classifier (good for CV)
+# - vaderSentiment: Lexicon-based ML model (industry standard)
+# - transformers: State-of-the-art deep learning (if you want to show advanced ML)
