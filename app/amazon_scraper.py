@@ -14,7 +14,7 @@ def get_scraperapi_key():
     """Get API key from environment or Streamlit secrets"""
     try:
         import streamlit as st
-        return st.secrets.get("SCRAPERAPI_KEY", "")
+        return st.secrets["SCRAPERAPI_KEY"]
     except:
         return os.getenv('SCRAPERAPI_KEY', '')
     
