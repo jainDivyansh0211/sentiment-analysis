@@ -250,29 +250,6 @@ with tab1:
             </div>
             """, unsafe_allow_html=True)
         
-        # Human-like insights
-        st.markdown("### Human-Like Insights")
-        
-        # Generate human insights based on results
-        if overall_sentiment['label'] == 'POSITIVE':
-            if overall_sentiment['score'] > 0.8:
-                insight = "🌟 **Highly Satisfied Customer!** This reviewer seems genuinely happy with their purchase."
-            else:
-                insight = "😊 **Generally Positive Experience** - Customer likes the product but may have minor concerns."
-        elif overall_sentiment['label'] == 'NEGATIVE':
-            if overall_sentiment['score'] > 0.8:
-                insight = "😞 **Clearly Disappointed** - This customer had significant issues with the product."
-            else:
-                insight = "😐 **Mixed Experience** - Customer has some complaints but not entirely negative."
-        else:
-            insight = "🤔 **Neutral Opinion** - Customer seems undecided or has balanced views."
-        
-        st.markdown(f"""
-        <div class="human-insight">
-            {insight}
-        </div>
-        """, unsafe_allow_html=True)
-        
         # Detailed sentiment analysis
         if aspects:
             st.markdown("### Detailed Aspect Analysis")
@@ -379,7 +356,7 @@ with tab2:
             st.error("❌ Please provide a valid Amazon URL")
             reviews = []
         else:
-            with st.spinner("🕷️ Scraping Amazon reviews... This magic takes a moment!"):
+            with st.spinner("Scraping Amazon reviews... This will take a moment!"):
                 progress_bar = st.progress(0)
                 status_text = st.empty()
                 
@@ -416,7 +393,7 @@ with tab2:
         
         # Quick sentiment preview
         quick_sentiments = []
-        for review in reviews[:3]:  # Quick analysis of first 3
+        for review in reviews[:]:  # Quick analysis of first 3
             sentiment = analyze_sentiment(review)
             quick_sentiments.append(sentiment['label'])
         
@@ -430,12 +407,7 @@ with tab2:
         else:
             business_insight = f"🟡 **Mixed Feedback** - Balanced opinions. Great opportunity for improvement!"
         
-        st.markdown(f"""
-        <div class="human-insight">
-            {business_insight}
-        </div>
-        """, unsafe_allow_html=True)
-        
+        st.markdown(f"{business_insight}")
         # Process each review
         all_review_results = []
         
